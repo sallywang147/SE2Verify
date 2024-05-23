@@ -1,0 +1,46 @@
+/Users/sallywang/symbolicX/SCTest/algo/executor/corpus/test.sol
+  1 |     | pragma solidity ^0.5.0;
+  2 |     | 
+  3 | *   | contract Test{
+  4 |     | 
+  5 |     |     struct Transaction{
+  6 |     |         address payable to;
+  7 |     |         uint amount;
+  8 |     |     }
+  9 |     | 
+ 10 |     | 
+ 11 |     |     mapping (bytes32 => Transaction) transactions;
+ 12 |     | 
+ 13 |     |     address owner;
+ 14 |     |     
+ 15 | *   |     function set_owner(address new_owner) public payable {
+ 16 | *   |         owner = new_owner;
+ 17 |     |     }
+ 18 |     |     
+ 19 | *   |     function new_transaction(address payable to, uint amount) public  payable returns (bytes32){
+ 20 | *   |         bytes32 token = keccak256(abi.encodePacked(to, amount));
+ 21 | *   |         Transaction storage t = transactions[token];
+ 22 | *   |         t.to = to;
+ 23 | *   |         t.amount += amount;
+ 24 | *   |         return token;
+ 25 |     |     }
+ 26 |     |     
+ 27 | *   |     function approve(bytes32 token) public payable {
+ 28 | *r  |         require(owner == msg.sender);
+ 29 | *   |         Transaction storage t = transactions[token];
+ 30 | *   |         t.to.transfer(t.amount);
+ 31 | *   |         delete transactions[token];
+ 32 |     |     }
+ 33 |     | 
+ 34 |     | 
+ 35 |     | 
+ 36 |     | function echidna_alwaystrue() public returns (bool){
+ 37 |     |     return(true);
+ 38 |     |   }
+ 39 |     | 
+ 40 |     |   function echidna_revert_always() public returns (bool){
+ 41 |     |     revert();
+ 42 |     |   }
+ 43 |     |     
+ 44 |     | }
+

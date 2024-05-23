@@ -1,0 +1,40 @@
+<style> code { white-space: pre-wrap; display: block; background-color: #eee; }.executed { background-color: #afa; }.reverted { background-color: #ffa; }.unexecuted { background-color: #faa; }.neutral { background-color: #eee; }</style><b>/Users/sallywang/symbolicX/SCTest/algo/executor/corpus/test.sol</b>
+<code>
+  1 |     | <span class='neutral'>pragma solidity ^0.5.2;</span>
+  2 |     | <span class='neutral'></span>
+  3 | *r  | <span class='executed'>contract test { </span>
+  4 |     | <span class='neutral'></span>
+  5 |     | <span class='neutral'>  address private _owner; </span>
+  6 |     | <span class='neutral'></span>
+  7 | *   | <span class='executed'>  function buggy_test(uint256 currentSupply) public payable returns (uint256){</span>
+  8 | *   | <span class='executed'>        currentSupply = 2;</span>
+  9 | *   | <span class='executed'>        return currentSupply;</span>
+ 10 |     | <span class='neutral'>    }</span>
+ 11 |     | <span class='neutral'></span>
+ 12 | *   | <span class='executed'>  function balanceOf(address account) public view returns (uint256) {</span>
+ 13 | *   | <span class='executed'>        return account.balance;</span>
+ 14 |     | <span class='neutral'>    }</span>
+ 15 | *   | <span class='executed'>  function deposit(address user, uint256 amount, uint256 currentSupply) public {</span>
+ 16 |     | <span class='neutral'>        // check for amount and user</span>
+ 17 | *r  | <span class='executed'>        require(</span>
+ 18 | *   | <span class='executed'>            amount &gt; 0 &amp;&amp; user != address(0x0),</span>
+ 19 |     | <span class='neutral'>            &quot;Insufficient amount or invalid user&quot;</span>
+ 20 |     | <span class='neutral'>        );</span>
+ 21 |     | <span class='neutral'></span>
+ 22 |     | <span class='neutral'>        // input balance</span>
+ 23 | *   | <span class='executed'>        uint256 input1 = balanceOf(user);</span>
+ 24 |     | <span class='neutral'></span>
+ 25 |     | <span class='neutral'>        // transfer amount to user</span>
+ 26 | *   | <span class='executed'>        address payable _user = address(uint160(user));</span>
+ 27 | *   | <span class='executed'>        _user.transfer(amount);</span>
+ 28 | *   | <span class='executed'>        currentSupply = buggy_test(currentSupply);</span>
+ 29 | *e  | <span class='executed'>        assert(currentSupply &gt; 100 &amp;&amp; msg.sender == _owner);</span>
+ 30 |     | <span class='unexecuted'>        currentSupply = currentSupply + amount;</span>
+ 31 |     | <span class='neutral'>    }</span>
+ 32 |     | <span class='neutral'></span>
+ 33 |     | <span class='neutral'></span>
+ 34 |     | <span class='neutral'>}</span>
+
+</code>
+<br />
+

@@ -1,0 +1,39 @@
+/Users/sallywang/symbolicX/SCTest/algo/executor/corpus/test.sol
+  1 |     | pragma solidity ^0.5.2;
+  2 |     | 
+  3 | *r  | contract test { 
+  4 |     | 
+  5 | *   |   uint256 public currentSupply = 0; 
+  6 |     |   address private _owner; 
+  7 |     | 
+  8 | *   |   function buggy_test() public payable returns (uint256){
+  9 | *   |         currentSupply = 2;
+ 10 | *   |         return currentSupply;
+ 11 |     |     }
+ 12 |     | 
+ 13 | *   |   function balanceOf(address account) public view returns (uint256) {
+ 14 | *   |         return account.balance;
+ 15 |     |     }
+ 16 | *   |   function deposit(address user, uint256 amount) public {
+ 17 |     |         // check for amount and user
+ 18 | *r  |         require(
+ 19 | *   |             amount > 0 && user != address(0x0),
+ 20 |     |             "Insufficient amount or invalid user"
+ 21 |     |         );
+ 22 |     | 
+ 23 |     |         // input balance
+ 24 | *   |         uint256 input1 = balanceOf(user);
+ 25 |     | 
+ 26 |     |         // transfer amount to user
+ 27 | *   |         address payable _user = address(uint160(user));
+ 28 | *   |         _user.transfer(amount);
+ 29 | *   |         currentSupply = buggy_test();
+ 30 | *   |         currentSupply = currentSupply + amount;
+ 31 |     |     }
+ 32 |     | 
+ 33 |     |   function echidna_alwaystrue() public view returns (bool){
+ 34 |     |      assert(currentSupply > 100 && msg.sender == _owner);
+ 35 |     |   }
+ 36 |     | 
+ 37 |     | }
+

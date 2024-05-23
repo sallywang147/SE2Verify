@@ -1,0 +1,36 @@
+/Users/sallywang/symbolicX/SCTest/algo/executor/corpus/test.sol
+  1 |     | pragma solidity ^0.5.2;
+  2 |     | 
+  3 | *r  | contract test { 
+  4 |     | 
+  5 |     |   address private _owner; 
+  6 |     | 
+  7 | *   |   function buggy_test(uint256 currentSupply) public payable returns (uint256){
+  8 | *   |         currentSupply = 2;
+  9 | *   |         return currentSupply;
+ 10 |     |     }
+ 11 |     | 
+ 12 | *   |   function balanceOf(address account) public view returns (uint256) {
+ 13 | *   |         return account.balance;
+ 14 |     |     }
+ 15 | *   |   function deposit(address user, uint256 amount, uint256 currentSupply) public {
+ 16 |     |         // check for amount and user
+ 17 | *r  |         require(
+ 18 | *   |             amount > 0 && user != address(0x0),
+ 19 |     |             "Insufficient amount or invalid user"
+ 20 |     |         );
+ 21 |     | 
+ 22 |     |         // input balance
+ 23 | *   |         uint256 input1 = balanceOf(user);
+ 24 |     | 
+ 25 |     |         // transfer amount to user
+ 26 | *   |         address payable _user = address(uint160(user));
+ 27 | *   |         _user.transfer(amount);
+ 28 | *   |         currentSupply = buggy_test(currentSupply);
+ 29 | *e  |         assert(currentSupply > 100 && msg.sender == _owner);
+ 30 |     |         currentSupply = currentSupply + amount;
+ 31 |     |     }
+ 32 |     | 
+ 33 |     | 
+ 34 |     | }
+
