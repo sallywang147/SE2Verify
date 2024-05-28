@@ -1,0 +1,25 @@
+<style> code { white-space: pre-wrap; display: block; background-color: #eee; }.executed { background-color: #afa; }.reverted { background-color: #ffa; }.unexecuted { background-color: #faa; }.neutral { background-color: #eee; }</style><b>/Users/sallywang/SE2Verify/dynamic_array_bug2.sol</b>
+<code>
+  1 |     | <span class='neutral'>// SPDX-License-Identifier: GPL-3.0</span>
+  2 |     | <span class='neutral'>pragma solidity &gt;=0.7.0;</span>
+  3 |     | <span class='neutral'>pragma experimental SMTChecker;</span>
+  4 |     | <span class='neutral'></span>
+  5 | *r  | <span class='executed'>contract C {</span>
+  6 |     | <span class='neutral'>    uint128[] x;</span>
+  7 | *   | <span class='executed'>    function f() public {</span>
+  8 | *   | <span class='executed'>        x.push(42); x.push(42); x.push(42); x.push(42);</span>
+  9 | *   | <span class='executed'>        uint128[] memory y;</span>
+ 10 | *e  | <span class='executed'>        y[0] = 23;</span>
+ 11 |     | <span class='unexecuted'>        x.push(); x.push(); x.push();</span>
+ 12 |     | <span class='unexecuted'>        x = y;</span>
+ 13 |     | <span class='unexecuted'>        assert(x[0] == 23);</span>
+ 14 |     | <span class='unexecuted'>        assert(x[1] == 0);</span>
+ 15 |     | <span class='unexecuted'>        assert(x[2] == 0);</span>
+ 16 |     | <span class='unexecuted'>        assert(x[3] == 0);</span>
+ 17 |     | <span class='neutral'>        //this is right nonw: [23, 0, 0, 0]</span>
+ 18 |     | <span class='neutral'>    }</span>
+ 19 |     | <span class='neutral'>}</span>
+
+</code>
+<br />
+
