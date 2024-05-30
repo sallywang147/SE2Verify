@@ -4,7 +4,7 @@ pragma experimental SMTChecker;
 
 /*garbage collection bug*/
 contract Foo {
-    uint256[] internal numbers = new uint256[](1);
+    uint256[] internal numbers;// = new uint256[](1);
 
     function addNumber(uint256 number) public {
         numbers.push(number);
@@ -26,9 +26,7 @@ contract Foo {
     }
 
     function _convertToUint40(uint256 n) internal pure returns (uint40 result) {
-        assembly {
-            result := n
-        }
+        return uint40(n);
     }
 
     function test_num() public view returns (bool) {
