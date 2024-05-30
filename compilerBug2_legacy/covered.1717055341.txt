@@ -1,0 +1,39 @@
+/Users/sallywang/SE2Verify/compilerBug2_legacy.sol
+  1 |     | // SPDX-License-Identifier: GPL-3.0
+  2 |     | pragma solidity^0.7.0;
+  3 |     | pragma experimental SMTChecker;
+  4 |     | 
+  5 |     | /*garbage collection bug*/
+  6 | *r  | contract Foo {
+  7 |     |     uint256[] internal numbers = new uint256[](1);
+  8 |     | 
+  9 | *   |     function addNumber(uint256 number) public {
+ 10 | *   |         numbers.push(number);
+ 11 |     |     }
+ 12 |     |     /***
+ 13 |     |     With legacy codegen, 
+ 14 |     |     when uint40 is returned from a function, 
+ 15 |     |     the value is truncated. 
+ 16 |     |     In the code below, if a value larger than uint40 is passed to getNumber, 
+ 17 |     |     it is truncated to 40 bits. This means that the results of getNumber(0) and getNumber(2**40) are the same.
+ 18 |     | 
+ 19 |     |     With viaIR codegen, the value is not truncated and some garbage remains in memory. 
+ 20 |     |     Thus, the actual index accessed in the numbers array is not correct, 
+ 21 |     |     so executing getNumber(2**40) results in an 'Array index out of bound' panic error.
+ 22 |     |     ***/
+ 23 |     | 
+ 24 | *   |     function getNumber(uint256 index) public view returns (uint256) {
+ 25 | *e  |         return numbers[_convertToUint40(index)];
+ 26 |     |     }
+ 27 |     | 
+ 28 | *   |     function _convertToUint40(uint256 n) internal pure returns (uint40 result) {
+ 29 | *   |         assembly {
+ 30 | *   |             result := n
+ 31 |     |         }
+ 32 |     |     }
+ 33 |     | 
+ 34 | *   |     function test_num() public view returns (bool) {
+ 35 | *   |         assert(getNumber(0) == getNumber(2**40));
+ 36 |     |     }
+ 37 |     | }
+

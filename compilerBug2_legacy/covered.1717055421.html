@@ -1,0 +1,43 @@
+<style> code { white-space: pre-wrap; display: block; background-color: #eee; }.executed { background-color: #afa; }.reverted { background-color: #ffa; }.unexecuted { background-color: #faa; }.neutral { background-color: #eee; }</style><b>/Users/sallywang/SE2Verify/compilerBug2_legacy.sol</b>
+<code>
+  1 |     | <span class='neutral'>// SPDX-License-Identifier: GPL-3.0</span>
+  2 |     | <span class='neutral'>pragma solidity^0.7.0;</span>
+  3 |     | <span class='neutral'>pragma experimental SMTChecker;</span>
+  4 |     | <span class='neutral'></span>
+  5 |     | <span class='neutral'>/*garbage collection bug*/</span>
+  6 | *r  | <span class='executed'>contract Foo {</span>
+  7 |     | <span class='unexecuted'>    uint256[] internal numbers = new uint256[](1);</span>
+  8 |     | <span class='neutral'></span>
+  9 | *   | <span class='executed'>    function addNumber(uint256 number) public {</span>
+ 10 | *   | <span class='executed'>        numbers.push(number);</span>
+ 11 |     | <span class='neutral'>    }</span>
+ 12 |     | <span class='neutral'>    /***</span>
+ 13 |     | <span class='neutral'>    With legacy codegen, </span>
+ 14 |     | <span class='neutral'>    when uint40 is returned from a function, </span>
+ 15 |     | <span class='neutral'>    the value is truncated. </span>
+ 16 |     | <span class='neutral'>    In the code below, if a value larger than uint40 is passed to getNumber, </span>
+ 17 |     | <span class='neutral'>    it is truncated to 40 bits. This means that the results of getNumber(0) and getNumber(2**40) are the same.</span>
+ 18 |     | <span class='neutral'></span>
+ 19 |     | <span class='neutral'>    With viaIR codegen, the value is not truncated and some garbage remains in memory. </span>
+ 20 |     | <span class='neutral'>    Thus, the actual index accessed in the numbers array is not correct, </span>
+ 21 |     | <span class='neutral'>    so executing getNumber(2**40) results in an &#39;Array index out of bound&#39; panic error.</span>
+ 22 |     | <span class='neutral'>    ***/</span>
+ 23 |     | <span class='neutral'></span>
+ 24 | *   | <span class='executed'>    function getNumber(uint256 index) public view returns (uint256) {</span>
+ 25 | *e  | <span class='executed'>        return numbers[_convertToUint40(index)];</span>
+ 26 |     | <span class='neutral'>    }</span>
+ 27 |     | <span class='neutral'></span>
+ 28 | *   | <span class='executed'>    function _convertToUint40(uint256 n) internal pure returns (uint40 result) {</span>
+ 29 | *   | <span class='executed'>        assembly {</span>
+ 30 | *   | <span class='executed'>            result := n</span>
+ 31 |     | <span class='neutral'>        }</span>
+ 32 |     | <span class='neutral'>    }</span>
+ 33 |     | <span class='neutral'></span>
+ 34 | *   | <span class='executed'>    function test_num() public view returns (bool) {</span>
+ 35 | *   | <span class='executed'>        assert(getNumber(0) == getNumber(2**40));</span>
+ 36 |     | <span class='neutral'>    }</span>
+ 37 |     | <span class='neutral'>}</span>
+
+</code>
+<br />
+
