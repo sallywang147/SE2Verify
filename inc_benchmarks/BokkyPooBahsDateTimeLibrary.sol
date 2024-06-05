@@ -1,29 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.7.0;
-pragma experimental SMTChecker;
-
-interface IV3TwapUtilities {
-  function getV3Pool(
-    address v3Factory,
-    address token0,
-    address token1,
-    uint24 poolFee
-  ) external view returns (address);
-
-  function getPoolPriceUSDX96(
-    address pricePool,
-    address nativeStablePool,
-    address WETH9
-  ) external view returns (uint256);
-
-  function sqrtPriceX96FromPoolAndInterval(
-    address pool
-  ) external view returns (uint160);
-
-  function priceX96FromSqrtPriceX96(
-    uint160 sqrtPriceX96
-  ) external pure returns (uint256);
-}
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.6;
 
 // ----------------------------------------------------------------------------
 // BokkyPooBah's DateTime Library v1.00
@@ -99,9 +75,5 @@ library BokkyPooBahsDateTimeLibrary {
     uint timestamp
   ) internal pure returns (uint year, uint month, uint day) {
     (year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
-    assert(year <= 2024); 
-    assert(month <= 12);
-    assert(day <= timestamp / SECONDS_PER_DAY);
   }
 }
-
