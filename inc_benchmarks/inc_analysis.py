@@ -40,10 +40,18 @@ def culpritCheck(folder):
             speedup = culprit_time - culprit_conretize_time
             print(f'Connretization speedup for {filename} is {speedup}')
                                 
-                       
+   
+def timeoutCheck(folder):    
+    for root, _, files in os.walk(folder):
+        for filename in files:
+            time = 0
+            filepath = os.path.join(root, filename)
+            if "timeout1" in filename: 
+                _, time = timeCheck(filename, filepath)
+                print(f'verification time for {filename} is {time}')                          
              
 def main():
-    culpritCheck("../inc_benchmarks")
+    timeoutCheck("../inc_benchmarks")
         
 if __name__ == "__main__":
     main()
