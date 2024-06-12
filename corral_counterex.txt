@@ -1,0 +1,3 @@
+/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(5,1): : Test::Constructor (this = address!0, msg.sender = address!2, msg.value = 11)
+/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(15,1): : Test::culpritOne (this = address!0, msg.sender = address!4, msg.value = 16, FixedPoint96 = 7373)
+/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(28,1): : ASSERTION FAILS!

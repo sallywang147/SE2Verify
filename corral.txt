@@ -1,17 +1,16 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, Balance}
+Verifying program while tracking: {assertsPassed, _totalWeights_Test, Q96_Test}
 Program has no bugs
-Reached recursion bound of 4
 
-Boogie verification time: 0.17 s
-Time spent reading-writing programs: 0.19 s
+Boogie verification time: 0.14 s
+Time spent reading-writing programs: 0.18 s
 
-Time spent checking a program (2): 0.30 s
+Time spent checking a program (2): 0.25 s
 Time spent checking a path (3): 0.16 s
 
-Number of procedures inlined: 36
-Number of variables tracked: 2
-Total Time: 0.6837433 s
-Total User CPU time: 0.73 s
+Number of procedures inlined: 10
+Number of variables tracked: 3
+Total Time: 0.6218008 s
+Total User CPU time: 0.66 s
