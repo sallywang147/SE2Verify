@@ -48,10 +48,19 @@ def timeoutCheck(folder):
             filepath = os.path.join(root, filename)
             if "timeout1" in filename: 
                 _, time = timeCheck(filename, filepath)
-                print(f'verification time for {filename} is {time}')                          
+                print(f'verification time for {filename} is {time}')  
+
+def invCheck(folder):    
+    for root, _, files in os.walk(folder):
+        for filename in files:
+            time = 0
+            filepath = os.path.join(root, filename)
+            if "inv" in filename: 
+                _, time = timeCheck(filename, filepath)
+                print(f'verification time for {filename} is {time}')                            
              
 def main():
-    timeoutCheck("../inc_benchmarks")
+    invCheck("../inc_benchmarks")
         
 if __name__ == "__main__":
     main()
