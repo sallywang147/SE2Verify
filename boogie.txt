@@ -1,6 +1,111 @@
 Boogie program verifier version 2.4.1.10503, Copyright (c) 2003-2014, Microsoft.
-__SolToBoogieTest_out.bpl(141,1): Error BP5001: This assertion might not hold.
+__SolToBoogieTest_out.bpl(178,1): Error BP5001: This assertion might not hold.
 Execution trace:
-    __SolToBoogieTest_out.bpl(100,1): anon0
+    __SolToBoogieTest_out.bpl(102,1): anon0
+    __SolToBoogieTest_out.bpl(118,1): anon6_LoopDone
+__SolToBoogieTest_out.bpl(190,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(102,1): anon0
+    __SolToBoogieTest_out.bpl(118,1): anon6_LoopDone
+__SolToBoogieTest_out.bpl(193,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(102,1): anon0
+    __SolToBoogieTest_out.bpl(118,1): anon6_LoopDone
+__SolToBoogieTest_out.bpl(283,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(102,1): anon0
+    __SolToBoogieTest_out.bpl(118,1): anon6_LoopDone
+    __SolToBoogieTest_out.bpl(199,1): anon7_LoopDone
+    __SolToBoogieTest_out.bpl(255,1): anon8_LoopBody
+__SolToBoogieTest_out.bpl(295,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(102,1): anon0
+    __SolToBoogieTest_out.bpl(118,1): anon6_LoopDone
+    __SolToBoogieTest_out.bpl(199,1): anon7_LoopDone
+    __SolToBoogieTest_out.bpl(255,1): anon8_LoopBody
+__SolToBoogieTest_out.bpl(178,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(347,1): anon0
+    __SolToBoogieTest_out.bpl(82,1): inline$Test_Test$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(352,1): anon3_LoopBody
+    __SolToBoogieTest_out.bpl(367,1): anon4_Then
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$3$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(102,1): inline$culpritOne_Test$0$anon0
+    __SolToBoogieTest_out.bpl(118,1): inline$culpritOne_Test$0$anon6_LoopDone
+__SolToBoogieTest_out.bpl(190,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(347,1): anon0
+    __SolToBoogieTest_out.bpl(82,1): inline$Test_Test$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(352,1): anon3_LoopBody
+    __SolToBoogieTest_out.bpl(367,1): anon4_Then
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$3$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(102,1): inline$culpritOne_Test$0$anon0
+    __SolToBoogieTest_out.bpl(118,1): inline$culpritOne_Test$0$anon6_LoopDone
+__SolToBoogieTest_out.bpl(193,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(347,1): anon0
+    __SolToBoogieTest_out.bpl(82,1): inline$Test_Test$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(352,1): anon3_LoopBody
+    __SolToBoogieTest_out.bpl(367,1): anon4_Then
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$3$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(102,1): inline$culpritOne_Test$0$anon0
+    __SolToBoogieTest_out.bpl(118,1): inline$culpritOne_Test$0$anon6_LoopDone
+__SolToBoogieTest_out.bpl(283,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(347,1): anon0
+    __SolToBoogieTest_out.bpl(82,1): inline$Test_Test$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(352,1): anon3_LoopBody
+    __SolToBoogieTest_out.bpl(367,1): anon4_Then
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$3$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(102,1): inline$culpritOne_Test$0$anon0
+    __SolToBoogieTest_out.bpl(118,1): inline$culpritOne_Test$0$anon6_LoopDone
+    __SolToBoogieTest_out.bpl(199,1): inline$culpritOne_Test$0$anon7_LoopDone
+    __SolToBoogieTest_out.bpl(255,1): inline$culpritOne_Test$0$anon8_LoopBody
+__SolToBoogieTest_out.bpl(295,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(347,1): anon0
+    __SolToBoogieTest_out.bpl(82,1): inline$Test_Test$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(64,1): inline$Test_Test_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(352,1): anon3_LoopBody
+    __SolToBoogieTest_out.bpl(367,1): anon4_Then
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$3$anon0
+    __SolToBoogieTest_out.bpl(24,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(102,1): inline$culpritOne_Test$0$anon0
+    __SolToBoogieTest_out.bpl(118,1): inline$culpritOne_Test$0$anon6_LoopDone
+    __SolToBoogieTest_out.bpl(199,1): inline$culpritOne_Test$0$anon7_LoopDone
+    __SolToBoogieTest_out.bpl(255,1): inline$culpritOne_Test$0$anon8_LoopBody
 
-Boogie program verifier finished with 10 verified, 1 error
+Boogie program verifier finished with 9 verified, 10 errors

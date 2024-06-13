@@ -74,16 +74,34 @@ def iteratecmd(cmd_list):
 	for i in cmd_list: 
 		runcmd(i)
 
-def test_timeout(file):
+def test_timeout_largeparameter(file):
 	start_time = time.time()
 	runcmd(f"dotnet ./verisol/bin/Debug/VeriSol.dll {file} Test /contractInfer /recursionBound:1000000 /k:100000000 /inlineDepth:100000000", verbose=True)
 	end_time = time.time()
 	duration = end_time - start_time 
 	return duration
+
+def test_timeout_defaultparameter(file):
+	start_time = time.time()
+	runcmd(f"dotnet ./verisol/bin/Debug/VeriSol.dll {file} Test /contractInfer", verbose=True)
+	end_time = time.time()
+	duration = end_time - start_time 
+	return duration
+
+def runtest(folder):
+	for root, _, files in os.walk(folder):
+		for filename in files:
+			time = 0
+			filepath = os.path.join(root, filename)
+			if "timeout1" in filename: 
+				time = test_timeout_defaultparameter(filename)
+				print(f'verification time for {filename} is {time}') 
 	    
 if __name__ == "__main__":
 	print("installing SmartInv verifier...")
 	#iteratecmd(cmd_list)
+	folder = "./"
+	runtest(folder)
 	#file = "./timeout1.sol"
 	#time = test_timeout(file)
 	#print(f"the verification runtime on testfile {file} without incremental strtegy is {time}\n")
@@ -99,6 +117,6 @@ if __name__ == "__main__":
 	#file5 = "./timeout1_variant4.sol"
 	#time5 = test_timeout(file5)
 	#print(f"the verification runtime on testfile {file5} with only non-linear constraints is {time5}\n")
-	file6 = "./timeout1_variant5.sol"
-	time6 = test_timeout(file6)
-	print(f"the verification runtime on testfile {file6} with only non-linear constraints is {time6}\n")
+	#file6 = "./timeout1_variant5.sol"
+	#time6 = test_timeout(file6)
+	#print(f"the verification runtime on testfile {file6} with only non-linear constraints is {time6}\n")

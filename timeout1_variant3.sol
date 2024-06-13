@@ -27,8 +27,6 @@ contract Test {
                 indexTokens[_i] = (_weights[_i] + _xX96 + 10 + _tokens[_i]) - _totalWeights;
                  assert(indexTokens[_i] >=  (_weights[_i] + _xX96 + 10 + _tokens[_i]));
         }
-       
-
   }
    
 }

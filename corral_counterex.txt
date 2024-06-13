@@ -1,3 +1,3 @@
-/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(5,1): : Test::Constructor (this = address!0, msg.sender = address!2, msg.value = 11)
-/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(15,1): : Test::culpritOne (this = address!0, msg.sender = address!4, msg.value = 16, FixedPoint96 = 7373)
-/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol(28,1): : ASSERTION FAILS!
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(4,1): : Test::Constructor (this = address!0, msg.sender = address!2, msg.value = 3)
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(14,1): : Test::culpritOne (this = address!0, msg.sender = address!3, msg.value = 6, FixedPoint96 = 7)
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(28,1): : ASSERTION FAILS!

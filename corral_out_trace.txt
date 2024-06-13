@@ -1,56 +1,22 @@
 s
 #
 1 18 3 1 c
-1 18 6 69 Test_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|5|
+1 18 6 65 Test_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|4|
 1 19 3 1 c
-1 19 6 69 Test_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|5|
+1 19 6 65 Test_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|4|
 1 19 4 25 CALL Test_Test_NoBaseCtor
 1 43 3 1 c
-1 43 6 69 Test_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|5|
+1 43 6 65 Test_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|4|
 1 43 4 33 RETURN from Test_Test_NoBaseCtor 
-1 117 3 1 c
-1 117 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|15|
-1 118 3 1 c
-1 118 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|16|
-1 122 3 1 c
-1 122 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|18|
-1 131 3 1 c
-1 131 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|19|
-1 136 3 1 c
-1 136 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|19|
-1 136 4 17 _totalWeights = 2
-1 137 3 1 c
-1 137 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|20|
-1 143 3 1 c
-1 143 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|20|
-1 143 4 33 _fundTokenIdx[_tokens[_i]] = 2747
-1 144 3 1 c
-1 144 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|21|
-1 149 3 1 c
-1 149 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|21|
-1 149 4 32 _isTokenInIndex[_tokens[_i]] = 1
-1 150 3 1 c
-1 150 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|18|
-1 153 3 1 c
-1 153 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|18|
-1 153 4 9 _i = 2748
-1 154 3 1 c
-1 154 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|18|
-1 158 3 1 c
-1 158 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|24|
-1 166 3 1 c
-1 166 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|24|
-1 166 4 12 _xX96 = 3152
-1 167 3 1 c
-1 167 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|26|
-1 176 3 1 c
-1 176 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|27|
-1 190 3 1 c
-1 190 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|27|
-1 190 4 23 indexTokens[_i] = 10150
-1 191 3 1 c
-1 191 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|28|
-1 202 3 1 c
-1 202 6 76 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/./timeout1_variant3.sol|28|
-1 202 4 152 ASSERTION FAILS assert M_int_int[indexTokens_s130][_i_s128] >= M_int_int[_weights_s130][_i_s128] + _xX96_s129 + 10 + M_int_int[_tokens_s130][_i_s128];
+1 95 3 1 c
+1 95 6 72 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|14|
+1 96 3 1 c
+1 96 6 72 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|15|
+1 100 3 1 c
+1 100 6 72 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|17|
+1 108 3 1 c
+1 108 6 72 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|28|
+1 110 3 1 c
+1 110 6 72 culpritOne_Test|/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol|28|
+1 110 4 57 ASSERTION FAILS assert M_int_int[_weights_s302][0] > 0;
  

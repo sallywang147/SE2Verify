@@ -1,16 +1,26 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
-Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _totalWeights_Test, Q96_Test}
-Program has no bugs
+Program has a potential bug: True bug
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(28,1): error PF5001: This assertion can fail
 
-Boogie verification time: 0.14 s
-Time spent reading-writing programs: 0.18 s
+Execution trace:
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(4,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL Test_Test, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 3, _verisolLastArg = true)
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(4,1): Trace: Thread=1  (CALL Test_Test_NoBaseCtor)
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(4,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL FreshRefGenerator, RETURN from FreshRefGenerator , RETURN from Test_Test_NoBaseCtor )
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(14,1): Trace: Thread=1  (RETURN from Test_Test , CALL CorralChoice_Test, CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL culpritOne_Test, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 6, FixedPoint96 = 7, _verisolLastArg = true)
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(15,1): Trace: Thread=1  ()
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(17,1): Trace: Thread=1  ()
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(28,1): Trace: Thread=1  ()
+/home/sallyjunsongwang/SE2Verify/timeout1_loaded.sol(28,1): Trace: Thread=1  (ASSERTION FAILS assert M_int_int[_weights_s302][0] > 0;
+ )
 
-Time spent checking a program (2): 0.25 s
-Time spent checking a path (3): 0.16 s
+Boogie verification time: 0.13 s
+Time spent reading-writing programs: 0.19 s
 
-Number of procedures inlined: 10
-Number of variables tracked: 3
-Total Time: 0.6218008 s
+Time spent checking a program (1): 0.27 s
+Time spent checking a path (1): 0.08 s
+
+Number of procedures inlined: 13
+Number of variables tracked: 1
+Total Time: 0.6250496 s
 Total User CPU time: 0.66 s
