@@ -25,9 +25,9 @@ def prompt_gen(file):
 	Please output verification proof failure points, why you think they cause verification proof failure, and the fixes for the failures. 
 	"""
         out =  gpt_infer(prompt)
-        outFile = open(f"rust.rawoutput.txt", "w+")
+        outFile = open(f"vector.rawoutput.txt", "w+")
         outFile.write(out)
         print(out)
 
-testFile = open("/home/sallyjunsongwang/SE2Verify/rust_benchmarks/simple.rs", "r")
+testFile = open("/home/sallyjunsongwang/SE2Verify/rust_benchmarks/vector.rs", "r")
 prompt_gen(testFile.read())
